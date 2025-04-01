@@ -1,0 +1,53 @@
+
+<form 
+    [formGroup]="form" 
+    class="form-container mx-auto p-4 shadow rounded" 
+    (ngSubmit)="id != 0 ? updateProduct() : addProduct()"
+    >
+    <div class="mb-3">
+        <label for="title" class="form-label fw-bold">Nombre del Curso</label>
+        <input id="title" formControlName="title" class="form-control" placeholder="Ingrese el nombre del producto">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label fw-bold">Descripción</label>
+        <textarea id="description" formControlName="description" class="form-control" rows="3" placeholder="Ingrese una descripción"></textarea>
+    </div>    
+    <div class="mb-3">
+        <label for="price" class="form-label fw-bold">Precio</label>
+        <input type="number" id="price" formControlName="price" class="form-control" placeholder="Ingrese el precio">
+    </div>  
+    <div class="mb-3">
+        <label for="image" class="form-label fw-bold">Imagen</label>
+        <input type="url" id="image" formControlName="image" class="form-control" placeholder="Ingrese la URL de la imagen">
+    </div>  
+    <button type="submit" class="btn btn-primary w-100">
+        {{ id != 0 ? 'Actualizar' : 'Agregar' }}
+    </button>    
+</form>
+
+<style>
+    .form-container {
+        width: 100%;
+        max-width: 500px;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+    }
+    .form-label {
+        color: #333;
+    }
+    .form-control {
+        border-radius: 0.375rem;
+    }
+    .btn-primary {
+        background-color: #d4af37; /* Golden color */
+        border-color: #b8860b;
+        color: #fff;
+    }
+    .btn-primary:hover {
+        background-color: #c5a02e; /* Slightly darker golden color */
+        border-color: #a67c00;
+    }
+    .form-container {
+        border: 1px solid #d4af37; /* Golden border for the form */
+    }
+</style>
